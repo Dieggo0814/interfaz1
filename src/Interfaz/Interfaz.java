@@ -58,7 +58,7 @@ public class Interfaz extends JFrame {
         this.comboPais1.addItem("Portugal");
         this.comboPais1.addItem("Francia");
         this.comboPais1.addItem("Italia");
-
+//
         this.puerto = new Puerto();
         this.hub = new Hub();
         this.textAreaEstado.setText(this.hub.toString());
