@@ -1,5 +1,9 @@
 package Interfaz;
 
+import PuertoPaquete.Contenedor;
+import PuertoPaquete.Hub;
+import PuertoPaquete.Puerto;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -27,9 +31,12 @@ public class Interfaz extends JFrame {
     private JRadioButton Boton3;
     private JCheckBox insAdCheckBox;
     private JTextArea textAreaEstado;
+    private JButton buttonBuscaCont;
 
     private Hub hub;
     private Contenedor contenedor;
+    private Puerto puerto;
+
 
     public Interfaz() {
 
@@ -52,6 +59,7 @@ public class Interfaz extends JFrame {
         this.comboPais1.addItem("Francia");
         this.comboPais1.addItem("Italia");
 
+        this.puerto = new Puerto();
         this.hub = new Hub();
         this.textAreaEstado.setText(this.hub.toString());
 
@@ -118,20 +126,21 @@ public class Interfaz extends JFrame {
                 }
             }
         });
+
         buttonBuscaCont.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if(Boton1.isSelected()){
-                    puerto.buscaContenHub(1, hub);
-                }
-                if(Boton2.isSelected()){
-                    puerto.buscaContenHub(2, hub);
-                }
-                else{
-                    puerto.buscaContenHub(3, hub);
-                }
-            }
-        });
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        if(Boton1.isSelected()){
+                            puerto.buscaContenHub(1, hub);
+                        }
+                        if(Boton2.isSelected()){
+                            puerto.buscaContenHub(2, hub);
+                        }
+                        else{
+                            puerto.buscaContenHub(3, hub);
+                        }
+                    }
+                });
     }
 
     public static void main(String[] args) {
