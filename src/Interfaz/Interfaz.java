@@ -118,6 +118,20 @@ public class Interfaz extends JFrame {
                 }
             }
         });
+        buttonBuscaCont.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(Boton1.isSelected()){
+                    puerto.buscaContenHub(1, hub);
+                }
+                if(Boton2.isSelected()){
+                    puerto.buscaContenHub(2, hub);
+                }
+                else{
+                    puerto.buscaContenHub(3, hub);
+                }
+            }
+        });
     }
 
     public static void main(String[] args) {
